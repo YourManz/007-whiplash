@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>Variables</Title>
+    <style>
+      h1{
+        font-style: italic;
+        color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>
+      Cart Quantity
+    </h1>
+
+    <button onclick="console.log(`Cart quantity: ${cart}`)">
+      Show Quantity
+    </button>
+
+    <button onclick="cart = cart + 1; console.log(`Cart quantity: ${cart}`)">
+      Add Item
+    </button>
+
+    <button onclick="cart = cart + 2; console.log(`Cart quantity: ${cart}`)">
+      +2
+    </button>
+
+    <button onclick="cart = cart + 3; console.log(`Cart quantity: ${cart}`)">
+      +3
+    </button>
+
+    <button onclick="cart = 0; console.log(`Cart was reset, cart quantity: ${cart}`)">
+      Reset Cart
+    </button>
+
+    <script>
+      let cart = 0;
+    </script>
+    <!--Declare the variable "cart" to 0-->
+
+  </body>
+</html>
+
+
