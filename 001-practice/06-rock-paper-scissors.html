@@ -15,7 +15,7 @@
     <!--The idea behind the rock paper scissors game is to use Math.random to pick a number, then to convert that  number into either rock, paper or scissors-->
     <button onclick="
       const randomNumber = Math.random(); 
-      if (randomNumber <= 1/3){ // here the imput for rock is if the randomNumber is less the one third.
+      if (randomNumber <= 1/3) { // here the imput for rock is if the randomNumber is less the one third.
         alert('You both picked rock! Tie !');
         numberTied++;
       } else if (randomNumber > 1/3 && randomNumber <= 2/3) { // same for scissors
@@ -28,23 +28,22 @@
     ">Rock</button>
 
     <button onclick="
-    const randomNumber = Math.random(); // this section works the same way with one minor difference. because the user selected scissors, the scenarios in which the user wins are changed. Also note that for the sake of simplicity, any time randomNumber pickes a number less then one third, for example, it will be rock, this could be adjusted, but that would lead to confusion.
-    if (randomNumber <= 1/3) {
-      alert('You pick paper! The computer picked rock! You loose!');
-      numberLost++;
-    } else if (randomNumber > 1/3 && <= 2/3) {
-      alert('You both picked scissors! Tie!');
-      numberTied++;
-    } else if (randomNumber > 2/3) {
-      alert('You picked scissors! The computer picked paper! You win!');
+    const randomNumberPaper = Math.random(); // this section works the same way with one minor difference. because the user selected paper, the scenarios in which the user wins are changed. Also note that for the sake of simplicity, any time randomNumber pickes a number less then one third, for example, it will be rock, this could be adjusted, but that would lead to confusion.
+    if (randomNumberPaper <= 1/3) {
+      alert('You pick paper! The computer picked rock! You win!');
       numberWon++;
-    }
-    console.log(`Picked scissors (1/3 <= && > 2/3): ${randomNumber});
+    } else if (randomNumberPaper > 1/3 && randomNumberPaper <= 2/3) {
+      alert('You both picked paper! Tie!');
+      numberTied++;
+    } else if (randomNumberPaper > 2/3) {
+      alert('You picked paper! The computer picked scissors! You loose!');
+      numberLost++;}
+    console.log(`Picked scissors (1/3 <= && > 2/3): ${randomNumberPaper}`);
     ">Paper</button>
     <button>Scissors</button>
    
    <button onclick="
-    console.log(`Number of wins: ${numberWon} \nNumber of losses: ${numberLost} \nNumber of ties: ${numberTied}`); // this code just outputs the number of wins, losses and ties to the console, primarily for testing purposes, will probably coomment out later.
+    // console.log(` Number of wins: ${numberWon} \nNumber of losses: ${numberLost} \nNumber of ties: ${numberTied}`); // this code just outputs the number of wins, losses and ties to the console, primarily for testing purposes, will probably coomment out later.
     ">Show Score</button>
 
   </body>
