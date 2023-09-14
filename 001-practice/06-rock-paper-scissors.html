@@ -23,12 +23,26 @@
       } else if (randomNumber > 2/3) {
         alert('You picked rock! The computer picked scissors! You win');
         numberWon++; }
-      console.log(randomNumber)
+      console.log(`Picked rock (< 1/3) ${randomNumber}`);
     ">Rock</button>
 
-    <button>Paper</button>
-    <button>Scissors</button>
     <button onclick="
+    const randomNumber = Math.random();
+    if (randomNumber <= 1/3) {
+      alert('You pick paper! The computer picked rock! You loose!');
+      numberLost++;
+    } else if (randomNumber > 1/3 && <= 2/3) {
+      alert('You both picked scissors! Tie!');
+      numberTied++;
+    } else if (randomNumber > 2/3) {
+      alert('You picked scissors! The computer picked paper! You win!');
+      numberWon++;
+    }
+    console.log(`Picked scissors (1/3 <= && > 2/3): ${randomNumber});
+    ">Paper</button>
+    <button>Scissors</button>
+   
+   <button onclick="
     console.log(`Number of wins: ${numberWon} \nNumber of losses: ${numberLost} \nNumber of ties: ${numberTied}`);
     ">Show Score</button>
 
