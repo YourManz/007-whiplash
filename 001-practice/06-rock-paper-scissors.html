@@ -38,12 +38,26 @@
     } else if (randomNumberPaper > 2/3) {
       alert('You picked paper! The computer picked scissors! You loose!');
       numberLost++;}
-    console.log(`Picked scissors (1/3 <= && > 2/3): ${randomNumberPaper}`);
+    console.log(`Picked paper (1/3 <= && > 2/3): ${randomNumberPaper}`);
     ">Paper</button>
-    <button>Scissors</button>
+
+    <button onclick="
+    const randomNumberScissors = Math.random();
+    if (randomNumberScissors <= 1/3) {
+      alert('You picked scissors! The computer picked rock! You loose!');
+      numberLost++;
+    } else if (randomNumberScissors > 1/3 && randomNumberScissors <= 2/3) {
+      alert('You picked scissors! The computer picked paper! You win!');
+      numberWon++;
+    } else if (randomNumberScissors > 2/3) {
+      alert('You picked scissors! The computer picked scissors! You tie!')
+      numberTied++;
+    }
+    console.log(`Picked scissors (2/3<): ${randomNumberScissors}`);
+    ">Scissors</button>
    
    <button onclick="
-    // console.log(` Number of wins: ${numberWon} \nNumber of losses: ${numberLost} \nNumber of ties: ${numberTied}`); // this code just outputs the number of wins, losses and ties to the console, primarily for testing purposes, will probably coomment out later.
+    console.log(` Number of wins: ${numberWon} \nNumber of losses: ${numberLost} \nNumber of ties: ${numberTied}`); // this code just outputs the number of wins, losses and ties to the console, primarily for testing purposes, will probably coomment out later.
     ">Show Score</button>
 
   </body>
