@@ -9,14 +9,8 @@
     <button onclick="
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
-    if (computerMove === 'rock') {
-      result = 'You tie!';
-    } else if (computerMove === 'paper') {
-      result = 'You loose!';
-    } else if (computerMove === 'scissors') {
-      result = 'You win!';
-    }
-    alert(`You picked rock! The computer picked ${computerMove}! ${result}`);
+
+    alert(`You picked rock! The computer picked ${computerMove}! You ${outputingAlert('paper', 'scissors', 'rock', computerMove)}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
     ">Rock</button>
 
     <button onclick="
@@ -24,14 +18,7 @@
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    if (computerMove === 'rock') {
-      result = 'You win!';
-    } else if (computerMove === 'paper') {
-      result = 'You tie!';
-    } else if (computerMove === 'scissors') {
-      result = 'You loose!';
-    }
-    alert(`You picked paper! The computer picked ${computerMove}! ${result}`);
+    alert(`You picked paper! The computer picked ${computerMove}! You ${outputingAlert('scissors', 'rock', 'paper', computerMove)}`);
 ">Paper</button>
 
     <button onclick="
@@ -39,14 +26,7 @@
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    if (computerMove === 'rock') {
-      result = 'You loose!';
-    } else if (computerMove === 'paper') {
-      result = 'You win!';
-    } else if (computerMove === 'scissors') {
-      result = 'You tie!';
-    }
-    alert(`You picked scissors! The computer picked ${computerMove}! ${result}`);
+    alert(`You picked scissors! The computer picked ${computerMove}! You ${outputingAlert('rock', 'paper', 'scissors', computerMove)}`);
 ">Scissors</button>
 
     <script>
@@ -64,6 +44,16 @@
           computerMove = 'scissors';
         }
         return computerMove; //console logging this function will result in the computer move before giving an error.
+      }
+
+      function outputingAlert(lose, win, tie, computerMove) {
+        if (computerMove === lose) {
+          return 'lose!';
+        } else if (computerMove === win) {
+          return 'win!';
+        } else if (computerMove === tie) {
+          return 'tie!';
+        }
       }
     </script>
   </body>
