@@ -10,23 +10,21 @@
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked rock! The computer picked ${computerMove}! You ${outputingAlert('paper', 'scissors', 'rock', computerMove)}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
+    alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
     ">Rock</button>
 
     <button onclick="
-    pickComputerMove();
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked paper! The computer picked ${computerMove}! You ${outputingAlert('scissors', 'rock', 'paper', computerMove)}`);
+    alert(`You picked paper! The computer picked ${computerMove}! You ${outputtingAlert('scissors', 'rock', 'paper', computerMove)}`);
 ">Paper</button>
 
     <button onclick="
-    pickComputerMove();
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked scissors! The computer picked ${computerMove}! You ${outputingAlert('rock', 'paper', 'scissors', computerMove)}`);
+    alert(`You picked scissors! The computer picked ${computerMove}! You ${outputtingAlert('rock', 'paper', 'scissors', computerMove)}`);
 ">Scissors</button>
 
     <script>
@@ -46,7 +44,7 @@
         return computerMove; //console logging this function will result in the computer move before giving an error.
       }
 
-      function outputingAlert(lose, win, tie, computerMove) {
+      function outtputingAlert(lose, win, tie, computerMove) { // This function, based on inputs will output win, lose or tie.
         if (computerMove === lose) {
           return 'lose!';
         } else if (computerMove === win) {
