@@ -7,7 +7,7 @@
     <h1 class="header">Rock Paper Scissors but better this time</h1>
 
     <button onclick="
-    pickComputerMove();
+    let computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
     if (computerMove === 'rock') {
       result = 'You tie!';
@@ -21,6 +21,7 @@
 
     <button onclick="
     pickComputerMove();
+    let computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
     if (computerMove === 'rock') {
@@ -35,6 +36,7 @@
 
     <button onclick="
     pickComputerMove();
+    let computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
     if (computerMove === 'rock') {
@@ -48,11 +50,11 @@
 ">Scissors</button>
 
     <script>
-    let computerMove = '';
+    // let computerMove = ''; |  one way of getting a value out of a function is to declare the variable in the global scope
 
       function pickComputerMove() {
         const randomNumber = Math.random();
-        
+        let computerMove = '';
     
         if (randomNumber <= 1/3) {
           computerMove = 'rock';
@@ -61,6 +63,7 @@
         } else if (randomNumber > 2/3) {
           computerMove = 'scissors';
         }
+        return computerMove; //console logging this function will result in the computer move before giving an error.
       }
     </script>
   </body>
