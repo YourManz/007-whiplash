@@ -30,6 +30,12 @@
     <script>
     // let computerMove = ''; |  one way of getting a value out of a function is to declare the variable in the global scope
 
+      const score = {
+        win: 0,
+        lose: 0,
+        tie:0
+      }
+
       function pickComputerMove() {
         const randomNumber = Math.random();
         let computerMove = '';
@@ -46,10 +52,13 @@
 
       function outputtingAlert(lose, win, tie, computerMove) { // This function, based on inputs will output win, lose or tie.
         if (computerMove === lose) {
+          score.lose++;
           return 'lose!';
         } else if (computerMove === win) {
+          score.win++;
           return 'win!';
         } else if (computerMove === tie) {
+          score.tie++;
           return 'tie!';
         }
       }
