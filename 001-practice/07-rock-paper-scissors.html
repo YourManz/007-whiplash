@@ -10,30 +10,42 @@
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
+    alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties ${score.tie}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
     ">Rock</button>
 
     <button onclick="
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked paper! The computer picked ${computerMove}! You ${outputtingAlert('scissors', 'rock', 'paper', computerMove)}`);
+    alert(`You picked paper! The computer picked ${computerMove}! You ${outputtingAlert('scissors', 'rock', 'paper', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties ${score.tie}`);
     ">Paper</button>
 
     <button onclick="
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked scissors! The computer picked ${computerMove}! You ${outputtingAlert('rock', 'paper', 'scissors', computerMove)}`);
+    alert(`You picked scissors! The computer picked ${computerMove}! You ${outputtingAlert('rock', 'paper', 'scissors', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`);
 ">Scissors</button>
+
+    <button onclick="resetScore()">Reset Score  </button>
 
     <script>
     // let computerMove = ''; |  one way of getting a value out of a function is to declare the variable in the global scope
 
-      const score = {
+      let score = {
         win: 0,
         lose: 0,
         tie:0
+      }
+
+      function resetScore() {
+        score = {
+          win: 0,
+          lose: 0,
+          tie: 0
+        }
+        alert(`Score Reset\n Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`)
+
       }
 
       function pickComputerMove() {
