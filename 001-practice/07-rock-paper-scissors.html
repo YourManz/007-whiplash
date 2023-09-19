@@ -10,7 +10,8 @@
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
-    alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties ${score.tie}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
+    alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)}
+    Wins: ${localStorage.getItem('scoreWin')} | Losses: ${localStorage.getItem('scoreLoss')} | Ties ${localStorage.getItem('scoreTie')}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
     ">Rock</button>
 
     <button onclick="
@@ -64,13 +65,13 @@
 
       function outputtingAlert(lose, win, tie, computerMove) { // This function, based on inputs will output win, lose or tie.
         if (computerMove === lose) {
-          score.lose++;
+          localStorage.setItem('scoreLoss', score.lose++);
           return 'lose!';
         } else if (computerMove === win) {
-          score.win++;
+          localStorage.setItem('scoreWin', score.win++);
           return 'win!';
         } else if (computerMove === tie) {
-          score.tie++;
+          localStorage.setItem('scoreTie', score.tie++);
           return 'tie!';
         }
       }
