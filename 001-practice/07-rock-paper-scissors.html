@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1 class="header">Rock Paper Scissors but better this time</h1>
-
+  //===============================================================================
     <button onclick="
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
@@ -13,47 +13,40 @@
     alert(`You picked rock! The computer picked ${computerMove}! You ${outputtingAlert('paper', 'scissors', 'rock', computerMove)}
     Wins: ${score.win} | Losses: ${score.lose} | Ties ${score.tie}`); //this calls a function that replaced what the last if statment tree did, this will output whether or not you win or lose.
     ">Rock</button>
-
+  //===============================================================================
     <button onclick="
-    const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
+    let computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
     alert(`You picked paper! The computer picked ${computerMove}! You ${outputtingAlert('scissors', 'rock', 'paper', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties ${score.tie}`);
     ">Paper</button>
-
+  //===============================================================================
     <button onclick="
     const computerMove = pickComputerMove(); // we can make the variable the output of the funciton, effectively bringing the scope of the vriable out of the function and to the global scope.
     let result = '';
 
     alert(`You picked scissors! The computer picked ${computerMove}! You ${outputtingAlert('rock', 'paper', 'scissors', computerMove)} \n Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`);
 ">Scissors</button>
-
-    <button onclick="resetScore()">Reset Score  </button>
-
+  //===============================================================================
+   <button onclick="resetScore()">Reset Score  </button>
+  //===============================================================================
     <script>
     // let computerMove = ''; |  one way of getting a value out of a function is to declare the variable in the global scope
 
       
-      
-      let score = {
-        win: 0,
-        lose: 0,
-        tie:0
-      }
-
-      console.log(JSON.parse(localStorage.getItem('score')));
-      
-      localStorage.setItem('score', JSON.stringify(score))
-
-      function resetScore() {
+      //===============================================================================
+      let score = JSON.parse(localStorage.getItem('score'))
+      if (!score) {
         score = {
           win: 0,
           lose: 0,
           tie: 0
-        }
-        alert(`Score Reset\n Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`);
-        return;
+        };
       }
+      localStorage.setItem('score', JSON.stringify(score));
+      //===============================================================================
+
+
 
       function pickComputerMove() {
         const randomNumber = Math.random();
@@ -69,18 +62,21 @@
         return computerMove; //console logging this function will result in the computer move before giving an error.
       }
 
-      function outputtingAlert(lose, win, tie, computerMove) { // This function, based on inputs will output win, lose or tie.
-        if (computerMove === lose) {
-          score.lose++;
-          return 'lose!';
-        } else if (computerMove === win) {
-          score.win++;
-          return 'win!';
-        } else if (computerMove === tie) {
-          score.tie++;
-          return 'tie!';
+      function outputtingAlert(lose, win, tie, computerMove) {
+          if (computerMove === lose) {
+            score.lose++;
+            localStorage.setItem('score', JSON.stringify(score)); // Update and store the score in local storage.
+            return 'lose!';
+          } else if (computerMove === win) {
+            score.win++;
+            localStorage.setItem('score', JSON.stringify(score)); // Update and store the score in local storage.
+            return 'win!';
+          } else if (computerMove === tie) {
+            score.tie++;
+            localStorage.setItem('score', JSON.stringify(score)); // Update and store the score in local storage.
+            return 'tie!';
+          }
         }
-      }
     </script>
   </body>
 </html>
