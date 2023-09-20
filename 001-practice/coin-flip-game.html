@@ -13,16 +13,16 @@
     <script>
       let guess = '';
 
-      const score = JSON.parse(localStorage.getItem('score')) || {
+      const score = JSON.parse(localStorage.getItem('score')) || { //Add the score object into local storage and use || to create a default which is an object with wins:0 and losses:0
         wins: 0,
         loss:0,
       };
-     score.showScore = function showScore() {
+     score.showScore = function showScore() { //manually add methods into the score object, I cannot put this into the above object because that is based on a default opperator.
           alert(`Your score is:\nWins: ${score.wins} | Losses: ${score.loss}`);
           return;
         };
 
-      score.resetScore = function resetScore() {
+      score.resetScore = function resetScore() { //manually add methods into the score object, I cannot put this into the above object because that is based on a default opperator.
           score.loss = 0;
           score.wins = 0;
           localStorage.setItem('score', JSON.stringify(score));
