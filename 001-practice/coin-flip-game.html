@@ -4,13 +4,17 @@
     <title>Coin Flip</title>
   </head>
   <body>
-    <button onclick="coinFlip(); alert(`It was ${result}! \nHeads: ${score.heads} | Tails: ${score.tails}`)">Flip Coin</button>
+    <button onclick="coinFlip();guess='heads';compare(result, guess)">Heads</button>
+    <button onclick="coinFlip();guess='tails';compare(result, guess)">Tails</button>
+
     <button onclick="resetScore(); alert('Score Reset! \nHeads: 0 | Tails: 0')">Reset Score</button>
     <script>
 
+      let guess = '';
+
       const score = JSON.parse(localStorage.getItem('score')) || {
-        heads: 0,
-        tails:0
+        wins: 0,
+        loss:0
       };
 
       let result = '';
@@ -28,6 +32,20 @@
           return 'heads';
         };
       };
+
+      function compare(flip, input) {
+        if (flip === input) {
+          score.wins++;
+          localStorage.setItem('score', JSON.stringify(score));
+          alert(`You guessed ${guess}! The coin landed on ${result}! You win!\nWins: ${score.wins} | Losses: ${score.loss}`);
+          return;
+        } else {
+          score.loss++;
+          localStorage.setItem('score', JSON.stringify(score));
+          alert(`You guessed ${guess}! The coin landed on ${result}!\nYou lose`);
+          return;
+        }
+      }
 
       function resetScore() {
         score.heads = 0;
