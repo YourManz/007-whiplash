@@ -35,14 +35,14 @@
 
       
       //===============================================================================
-      let score = JSON.parse(localStorage.getItem('score'))
-      if (!score) {
+      let score = JSON.parse(localStorage.getItem('score')) || {win:0,lose:0,tie:0};
+   /*   if (!score) {
         score = {
           win: 0,
           lose: 0,
           tie: 0
-        };
-      }
+        }; 
+      } */
       localStorage.setItem('score', JSON.stringify(score));
       //===============================================================================
       function resetScore() {
