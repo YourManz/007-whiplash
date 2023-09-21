@@ -6,12 +6,12 @@
   <body>
     <h1 class="header">Rock Paper Scissors but better this time</h1>
 
-    <button class="rock-button" onclick="selectWinOrLose('rock', 'paper', 'scissors', 'rock');">Rock</button>
-    <button class="paper-button" onclick="selectWinOrLose('paper', 'scissors', 'rock', 'paper');">Paper</button>
-    <button class="scissors-button" onclick="selectWinOrLose('paper', 'rock', 'paper', 'scissors');">Scissors</button>
+    <button onclick="selectWinOrLose('rock', 'paper', 'scissors', 'rock');">Rock</button>
+    <button onclick="selectWinOrLose('paper', 'scissors', 'rock', 'paper');">Paper</button>
+    <button onclick="selectWinOrLose('paper', 'rock', 'paper', 'scissors');">Scissors</button>
 
-    <p class="win-or-lose">Pick a button!</p>
-    <p class="score"></p>
+    <p class="js-win-or-lose">Pick a button!</p>
+    <p class="js-score"></p>
   <!--//===============================================================================-->
    <button onclick="resetScore()">Reset Score  </button>
   <!--//===============================================================================-->
@@ -81,9 +81,9 @@
         const computerChoice = pickComputerMove();
         const output = outputtingAlert(b, c, d, computerChoice);
 
-        document.querySelector('.win-or-lose')
+        document.querySelector('.js-win-or-lose')
           .innerHTML = `You picked ${a}! The computer picked ${computerChoice}! You ${output}`;
-        document.querySelector('.score')
+        document.querySelector('.js-score')
           .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`;
         return;
       };
