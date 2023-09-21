@@ -33,14 +33,14 @@
    <button onclick="resetScore()">Reset Score  </button>
   <!--//===============================================================================-->
     <script>
-      
+      //saves score in localStorage and also sets a default if the score cannot be found.
       let score = JSON.parse(localStorage.getItem('score')) || {win:0,lose:0,tie:0};
       localStorage.setItem('score', JSON.stringify(score));
 
-      //===============================================================================
+      //===============================================================================// Sets the score in the .score class
       
       document.querySelector('.score')
-        .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`
+        .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`;
 
       //===============================================================================
       
@@ -52,7 +52,7 @@
         };
         document.querySelector('.score').innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`
         localStorage.setItem('score', JSON.stringify(score));
-      }
+      };
 
       //===============================================================================
 
@@ -66,9 +66,9 @@
           computerMove = 'paper';
         } else if (randomNumber > 2/3) {
           computerMove = 'scissors';
-        }
+        };
         return computerMove; //console logging this function will result in the computer move before giving an error.
-      }
+      };
 
       //===============================================================================
 
@@ -85,8 +85,8 @@
             score.tie++;
             localStorage.setItem('score', JSON.stringify(score)); // Update and store the score in local storage.
             return 'tie!';
-          }
-        }
+          };
+        };
 
        //===============================================================================
 
@@ -98,7 +98,7 @@
           .innerHTML = `You picked ${a}! The computer picked ${computerChoice}! You ${output}`;
         document.querySelector('.score')
           .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`;
-        return
+        return;
       };
     </script>
   </body>
