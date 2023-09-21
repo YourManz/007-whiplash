@@ -4,9 +4,27 @@
     <title>Document Object Model</title>
   </head>
   <body>
-
+    <button onclick="addNumber()">Hello</button>
+    <button onclick="resetNumber()">Reset Score</button>
     <script>
+      let numberCounter = 0;
+      console.log(document.querySelector('button').innerHTML = '0');
       
+      /*console.log(document.body.innerHTML);
+      console.log(console);*/
+      // document.body.innerHTML = '<button>Changed</button>'
+
+      function addNumber() {
+        numberCounter++;
+        document.querySelector('button').innerHTML = numberCounter;
+        return;
+      }
+
+      function resetNumber() {
+        numberCounter = 0;
+        document.querySelector('button').innerHTML = numberCounter;
+        return;
+      }
     </script>
   </body>
 </html>
