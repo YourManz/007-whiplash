@@ -33,23 +33,17 @@
    <button onclick="resetScore()">Reset Score  </button>
   <!--//===============================================================================-->
     <script>
-    // let computerMove = ''; |  one way of getting a value out of a function is to declare the variable in the global scope
-
       
-      //===============================================================================
       let score = JSON.parse(localStorage.getItem('score')) || {win:0,lose:0,tie:0};
-   /*   if (!score) {
-        score = {
-          win: 0,
-          lose: 0,
-          tie: 0
-        }; 
-      } */
       localStorage.setItem('score', JSON.stringify(score));
+
       //===============================================================================
+      
       document.querySelector('.score')
         .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`
+
       //===============================================================================
+      
       function resetScore() {
         score = {
           win: 0,
@@ -59,7 +53,9 @@
         document.querySelector('.score').innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`
         localStorage.setItem('score', JSON.stringify(score));
       }
+
       //===============================================================================
+
       function pickComputerMove() {
         const randomNumber = Math.random();
         let computerMove = '';
@@ -73,6 +69,7 @@
         }
         return computerMove; //console logging this function will result in the computer move before giving an error.
       }
+
       //===============================================================================
 
       function outputtingAlert(lose, win, tie, computerMove) {
@@ -90,6 +87,7 @@
             return 'tie!';
           }
         }
+
        //===============================================================================
 
       function selectWinOrLose(a, b, c, d) {
