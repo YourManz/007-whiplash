@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <button class="js-subscribe" onclick="subscribe();"></button>
+    <p>Amazon Shipping Calculator</p>
+    
+    <input class="js-shippingCalc" placeholder="Cost of Items">
+    <button class="js-shippingButton" onclick="calculateShipping()">Calculate</button>
+    <p class="js-shipping"></p>
+    <p class="js-total"></p>
+
+    <script>
+      let subscribed = JSON.parse(localStorage.getItem('subscribed')) || false;
+      const subscribeButton = document.querySelector('.js-subscribe');
+
+      updateButtonText();
+
+      function subscribe(a) {
+        subscribed = !subscribed;
+        localStorage.setItem('subscribed', JSON.stringify(subscribed));
+        updateButtonText();
+        return;
+      };
+
+      function updateButtonText() {
+        if (subscribed) {
+          subscribeButton.innerHTML = 'Subscribed';
+        } else {
+          subscribeButton.innerHTML = 'Subscribe';
+        }
+      }
+
+      const cost = document.querySelector('.js-shippingCalc');
+      function calculateShipping() {
+        if (cost.value < 40) {
+          let inputNumber = Number(cost.value);
+          inputNumber += 10;
+          document.querySelector('.js-shipping').innerHTML = 'You need to pay for shipping';
+          document.querySelector('.js-total').innerHTML = `Your total is $${inputNumber}`;
+        } else if (cost.value > 40) {
+          let inputNumber = Number(cost.value, 10);
+          document.querySelector('.js-shipping').innerHTML = 'You do not need to pay for shipping';
+          document.querySelector('.js-total').innerHTML = `Your total is $${inputNumber}`;        
+        } else if (Number(cost.value) < 0 || typeof cost != Number) {
+          document.querySelector('.js-shipping').innerHTML = 'Please input a valid field';
+          document.querySelector('.js-total').innerHTML = ``;  
+        };
+      };
+    </script>
+  </body>
+</html>
