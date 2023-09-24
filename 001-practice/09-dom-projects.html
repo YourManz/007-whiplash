@@ -7,7 +7,7 @@
     <button class="js-subscribe" onclick="subscribe();"></button>
     <p>Amazon Shipping Calculator</p>
     
-    <input class="js-shippingCalc" placeholder="Cost of Items">
+    <input class="js-shippingCalc" onkeydown="event.code === 'Enter' && calculateShipping(); //console.log(event)" placeholder="Cost of Items">
     <button class="js-shippingButton" onclick="calculateShipping()">Calculate</button>
     <p class="js-shipping"></p>
     <p class="js-total"></p>
