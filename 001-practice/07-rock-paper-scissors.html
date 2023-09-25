@@ -34,6 +34,15 @@
         height:30px;
         width:30px;
       }
+      .reset-score {
+        border:none;
+        margin: 10px;
+        padding:8px;
+        color:rgb(25, 25, 25); 
+        font-weight:bold;
+        background-color: rgb(102, 114, 165);
+      }
+
     </style>
   
   </head>
@@ -48,7 +57,7 @@
     <p class="js-images-result">You: <img class="js-player-image result-image" src="images/rock-emoji.png"> Computer: <img class="js-computer-image result-image" src="images/rock-emoji.png"></p>
     <p class="js-score"></p>
   <!--//===============================================================================-->
-   <button onclick="resetScore()">Reset Score  </button>
+   <button class="reset-score" onclick="resetScore()">Reset Score  </button>
   <!--//===============================================================================-->
     <script>
       //saves score in localStorage and also sets a default if the score cannot be found.
@@ -122,8 +131,8 @@
         playerImage.setAttribute('src', `images/${a}-emoji.png`);
         computerImage.setAttribute('src', `images/${computerChoice}-emoji.png`);
 
-        document.querySelector('.js-win-or-lose')
-          .innerHTML = `You picked ${a}! The computer picked ${computerChoice}! You ${output}`;
+        //document.querySelector('.js-win-or-lose')
+          //.innerHTML = `You picked ${a}! The computer picked ${computerChoice}! You ${output}`;
         document.querySelector('.js-score')
           .innerHTML = `Wins: ${score.win} | Losses: ${score.lose} | Ties: ${score.tie}`;
           return;
