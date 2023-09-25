@@ -3,12 +3,24 @@
   <head>
     <title>DOM Projects</title>
   </head>
+  <style>
+    .subscribe-button {
+      border:none;
+      
+    }
+    .shipping-button {
+
+    }
+    .shipping-input {
+      
+    }
+  </style>
   <body>
-    <button class="js-subscribe" onclick="subscribe();"></button>
+    <button class="js-subscribe subscribe-button" onclick="subscribe();"></button>
     <p>Amazon Shipping Calculator</p>
     
-    <input class="js-shippingCalc" onkeydown="event.code === 'Enter' && calculateShipping(); //console.log(event)" placeholder="Cost of Items">
-    <button class="js-shippingButton" onclick="calculateShipping()">Calculate</button>
+    <input class="js-shippingCalc shipping-input" onkeydown="event.code === 'Enter' && calculateShipping(); //console.log(event)" placeholder="Cost of Items">
+    <button class="js-shippingButton shipping-button" onclick="calculateShipping()">Calculate</button>
     <p class="js-shipping"></p>
     <p class="js-total"></p>
 
