@@ -10,8 +10,16 @@
       color:white;
       padding-top: 10px;
       padding-bottom: 10px;
-      padding-left:10px;
-      padding-left:10px;
+      padding-left:15px;
+      padding-right:15px;
+      font-weight:bold;
+      border-radius:100px;
+      cursor:pointer;
+    }
+
+    .is-subscribed {
+      color:black;
+      background-color: grey;
     }
     .shipping-button {
 
@@ -38,6 +46,10 @@
       function subscribe(a) {
         subscribed = !subscribed;
         localStorage.setItem('subscribed', JSON.stringify(subscribed));
+        subscribeButton.classList.add('is-subscribed');
+        if (subscribed === true) {
+          subscribeButton.classList.remove('is-subscribed');
+        }
         updateButtonText();
         return;
       };
