@@ -1,0 +1,16 @@
+.category-button {
+  border:none;
+  margin:8px;
+  padding:10px;
+  cursor:pointer;
+  border-radius:5px;
+  background-color:beige;
+  font-weight:bold;
+}
+.toggled-button {
+  background-color: black;
+  color:white;
+}
+body {
+  color:rgb(25, 25, 25,);
+}
