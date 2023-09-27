@@ -30,9 +30,16 @@ function addItem2() {
 
 function addSecondList() {
   for (index = 0; index <= todoTwo.length-1; index++) {
-    document.querySelector('.js-todo-list-two').innerHTML += `${todoTwo[index]}</br>`;
+    document.querySelector('.js-todo-list-two').innerHTML += `<p>${todoTwo[index]} <button onclick="deleteSingleItem(${index})">Delete</button></p> `;
     console.log(todoTwo[index]);
   };
+};
+
+function deleteSingleItem(i) {
+  todoTwo.splice(i, 1);
+  localStorage.setItem('todoTwo', JSON.stringify(todoTwo));
+  document.querySelector('.js-todo-list-two').innerHTML = '';
+  addSecondList();
 };
 
 function clearListTwo() {
@@ -42,14 +49,13 @@ function clearListTwo() {
   document.querySelector('.js-todo-list-two').innerHTML = ``;
 }
 
+
 function calculateArray(a) {
-  let runningTotal = 0;
+  let runningTotal = 0; 
   for (let i=0; i < a.length; i++) {
     if (typeof a[i] === 'number') {
       runningTotal += a[i];
-      console.log(runningTotal);
       };
     };
   };
 
-calculateArray([1,6,12,'hello',10])
