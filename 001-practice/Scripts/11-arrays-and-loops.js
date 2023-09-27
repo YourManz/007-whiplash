@@ -31,19 +31,16 @@ function addItem2() {
     'three'
   ]
   
-  for (index = 0; todoTest.length - 1; index++) {
-    document.querySelector('.js-todo-list-two').innerHTML = `${todoTest[index]}\n`;
-    console.log(todoTest[index]);
+  for (index = 0; index <= todoTwo.length-1; index++) {
+    document.querySelector('.js-todo-list-two').innerHTML += `${todoTwo[index]}</br>`;
+    console.log(todoTwo[index]);
   }
   
 }
 
-function consoleLogArray() {
-  console.log(todoOne);
-}
-
-function clearList() {
-  const listLngth = todoOne.length;
-  todoOne.splice(0, listLngth);
-  localStorage.setItem('todoOne', JSON.stringify(todoOne));
+function clearListTwo() {
+  const listLngth = todoTwo.length;
+  todoTwo.splice(0, listLngth);
+  localStorage.setItem('todoTwo', JSON.stringify(todoTwo));
+  document.querySelector('.js-todo-list-two').innerHTML = ``;
 }
