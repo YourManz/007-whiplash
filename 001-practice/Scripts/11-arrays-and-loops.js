@@ -33,9 +33,10 @@ function addItem2() {
 function addSecondList() {
   for (index = 0; index <= todoTwo.length-1; index++) {
     const date = document.querySelector('.js-date').value;
-    document.querySelector('.js-todo-list-two').innerHTML += `<p>${todoTwo[index].todo} ${todoTwo[index].date} <button onclick="deleteSingleItem(${index})">Delete</button></p> `;
+    document.querySelector('.js-todo-list-two').innerHTML += `<p class="basic-text">${todoTwo[index].todo} ${todoTwo[index].date} <button onclick="deleteSingleItem(${index})" class="red-button">Delete</button></p> `;
   };
 };
+addSecondList()
 
 function deleteSingleItem(i) {
   todoTwo.splice(i, 1);
