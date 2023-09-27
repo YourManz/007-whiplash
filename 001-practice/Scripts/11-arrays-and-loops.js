@@ -18,11 +18,13 @@ function clearList() {
 const todoTwo= JSON.parse(localStorage.getItem('todoTwo')) || [];
 function addItem2() {
   const todoInput = document.querySelector('.js-input-2');
+  const date = document.querySelector('.js-date').value;
 
-  todoTwo.push(todoInput.value);// gets value out of item and pushes it into the todoTwo array
+  todoTwo.push({'todo':todoInput.value, 'date':date});// gets value out of item and pushes it into the todoTwo array
   localStorage.setItem('todoTwo', JSON.stringify(todoTwo)); //stores array in localStorage
   
-  document.querySelector('.js-input-2').value = ''; //clears relevent html fields before looping items in
+  document.querySelector('.js-input-2').value = '';
+  document.querySelector('.js-date').value = ''; //clears relevent html fields before looping items in
   document.querySelector('.js-todo-list-two').innerHTML = ``;
 
   addSecondList();
@@ -30,8 +32,8 @@ function addItem2() {
 
 function addSecondList() {
   for (index = 0; index <= todoTwo.length-1; index++) {
-    document.querySelector('.js-todo-list-two').innerHTML += `<p>${todoTwo[index]} <button onclick="deleteSingleItem(${index})">Delete</button></p> `;
-    console.log(todoTwo[index]);
+    const date = document.querySelector('.js-date').value;
+    document.querySelector('.js-todo-list-two').innerHTML += `<p>${todoTwo[index].todo} ${todoTwo[index].date} <button onclick="deleteSingleItem(${index})">Delete</button></p> `;
   };
 };
 
