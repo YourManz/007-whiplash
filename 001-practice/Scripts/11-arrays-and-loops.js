@@ -18,25 +18,22 @@ function clearList() {
 const todoTwo= JSON.parse(localStorage.getItem('todoTwo')) || [];
 function addItem2() {
   const todoInput = document.querySelector('.js-input-2');
-  const listLngth = todoTwo.length;
 
-  todoTwo.push(todoInput.value);
-  localStorage.setItem('todoOne', JSON.stringify(todoTwo));
-  document.querySelector('.js-input-2').value = '';
+  todoTwo.push(todoInput.value);// gets value out of item and pushes it into the todoTwo array
+  localStorage.setItem('todoTwo', JSON.stringify(todoTwo)); //stores array in localStorage
+  
+  document.querySelector('.js-input-2').value = ''; //clears relevent html fields before looping items in
   document.querySelector('.js-todo-list-two').innerHTML = ``;
-  
-  todoTest = [
-    'one',
-    'two',
-    'three'
-  ]
-  
+
+  addSecondList();
+}
+
+function addSecondList() {
   for (index = 0; index <= todoTwo.length-1; index++) {
     document.querySelector('.js-todo-list-two').innerHTML += `${todoTwo[index]}</br>`;
     console.log(todoTwo[index]);
-  }
-  
-}
+  };
+};
 
 function clearListTwo() {
   const listLngth = todoTwo.length;
@@ -44,3 +41,15 @@ function clearListTwo() {
   localStorage.setItem('todoTwo', JSON.stringify(todoTwo));
   document.querySelector('.js-todo-list-two').innerHTML = ``;
 }
+
+function calculateArray(a) {
+  let runningTotal = 0;
+  for (let i=0; i < a.length; i++) {
+    if (typeof a[i] === 'number') {
+      runningTotal += a[i];
+      console.log(runningTotal);
+      };
+    };
+  };
+
+calculateArray([1,6,12,'hello',10])
