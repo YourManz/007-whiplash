@@ -11,14 +11,17 @@
     <button onclick="consoleLogArray()">Show List</button>
     <button onclick="clearList()">Clear List</button>
 <!-------------------------------------------------------------------------->
-    <br>
-    <input placeholder="To Do" onkeypress="event.code === 'Enter' && addItem2();" class="js-input-2 input-box"> 
-    <input class="js-date input-box" type="date" onkeypress="event.code === 'Enter' && addItem2();">
+  </br>
+  </br>
+    <div class="todo-input-grid">
+      <input placeholder="To Do" onkeypress="event.code === 'Enter' && addItem2();" class="js-input-2 input-box"> 
+      <input class="js-date input-box" type="date" onkeypress="event.code === 'Enter' && addItem2();">
+      
+      <button class="add-button" onclick="addItem2()">Add</button>
+        <button onclick="clearListTwo()" class="red-button">Clear List</button>
+      </div>
     
-    <button class="add-button" onclick="addItem2()">Add</button>
-    <button onclick="clearListTwo()" class="red-button">Clear List</button>
-
-    <div class="js-todo-list-two"></div>
+    <div class="js-todo-list-two todo-grid"></div>
 
    
     <script src="Scripts/11-arrays-and-loops.js"></script>
