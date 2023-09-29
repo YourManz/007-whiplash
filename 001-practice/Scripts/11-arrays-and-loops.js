@@ -16,6 +16,7 @@ function clearList() {
 };
 //==========================================================================
 const todoTwo= JSON.parse(localStorage.getItem('todoTwo')) || [];
+addSecondList();
 function addItem2() {
   const todoInput = document.querySelector('.js-input-2');
   const date = document.querySelector('.js-date').value;
@@ -36,7 +37,6 @@ function addSecondList() {
     document.querySelector('.js-todo-list-two').innerHTML += `<div class="basic-text">${todoTwo[index].todo}</div> <div class="basic-text">${todoTwo[index].date}</div> <button onclick="deleteSingleItem(${index})" class="red-button">Delete</button> <div></div>`;
   };
 };
-addSecondList();
 
 function deleteSingleItem(i) {
   todoTwo.splice(i, 1);
