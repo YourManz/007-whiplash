@@ -4,14 +4,16 @@ const toggled = JSON.parse(localStorage.getItem('toggled')) || {
   tech:false
 };
 
-if (toggled.gaming === true) {
-  document.querySelector(`.js-gaming-button`).classList.add('toggled-button');
-};
-if (toggled.music === true) {
-  document.querySelector(`.js-music-button`).classList.add('toggled-button');
-};
-if (toggled.tech === true) {
-  document.querySelector(`.js-tech-button`).classList.add('toggled-button');
+function toggledCheck() {
+  if (toggled.gaming === true) {
+    document.querySelector(`.js-gaming-button`).classList.add('toggled-button');
+  };
+  if (toggled.music === true) {
+    document.querySelector(`.js-music-button`).classList.add('toggled-button');
+  };
+  if (toggled.tech === true) {
+    document.querySelector(`.js-tech-button`).classList.add('toggled-button');
+  };
 };
 
 function toggleButton(a) {
@@ -25,4 +27,19 @@ function toggleButton(a) {
     buttonClass.classList.remove('toggled-button');
   }
 localStorage.setItem('toggled', JSON.stringify(toggled))
+checkButtonToggle();
 };
+
+function checkButtonToggle() {
+  if (toggled.gaming === true) {
+    toggled.gaming = false;
+    toggledCheck();
+  }
+  if (toggled.music === true) {
+    toggled.gaming = false;
+    toggledCheck();
+  }
+  if (toggled.tech === true) {
+    toggled.gaming = false;
+    toggledCheck();
+  }
