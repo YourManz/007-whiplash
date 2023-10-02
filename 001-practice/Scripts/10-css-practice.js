@@ -32,14 +32,17 @@ checkButtonToggle();
 
 function checkButtonToggle() {
   if (toggled.gaming === true) {
-    toggled.gaming = false;
+    toggled.music = false;
+    toggled.tech = false;
     toggledCheck();
   }
   if (toggled.music === true) {
     toggled.gaming = false;
+    toggled.tech = false;
     toggledCheck();
   }
   if (toggled.tech === true) {
     toggled.gaming = false;
+    toggled.music = false;
     toggledCheck();
   }
