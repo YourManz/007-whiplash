@@ -4,18 +4,6 @@ const toggled = JSON.parse(localStorage.getItem('toggled')) || {
   tech:false
 };
 
-function toggledCheck() {
-  if (toggled.gaming === true) {
-    document.querySelector(`.js-gaming-button`).classList.add('toggled-button');
-  };
-  if (toggled.music === true) {
-    document.querySelector(`.js-music-button`).classList.add('toggled-button');
-  };
-  if (toggled.tech === true) {
-    document.querySelector(`.js-tech-button`).classList.add('toggled-button');
-  };
-};
-
 function toggleButton(a) {
   const buttonClass = document.querySelector(`.js-${a}-button`);
   //document.querySelector('.category-button').classList.remove('toggled-button');
@@ -46,3 +34,15 @@ function checkButtonToggle() {
     toggled.music = false;
     toggledCheck();
   }
+
+function toggledCheck() {
+  if (toggled.gaming === true) {
+    document.querySelector(`.js-gaming-button`).classList.add('toggled-button');
+  };
+  if (toggled.music === true) {
+    document.querySelector(`.js-music-button`).classList.add('toggled-button');
+  };
+  if (toggled.tech === true) {
+    document.querySelector(`.js-tech-button`).classList.add('toggled-button');
+  };
+};
