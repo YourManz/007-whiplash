@@ -36,4 +36,5 @@ body {
   color:rgb(25, 25, 25); 
   font-weight:bold;
   background-color: rgb(102, 114, 165);
+  cursor:pointer;
 }
