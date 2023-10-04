@@ -4,7 +4,7 @@ function greeting() {
 greeting();
  
 const function1 = function() {
-  console.log('hello2')
+  console.log('hello2');
 };
 
 [
@@ -16,6 +16,13 @@ const function1 = function() {
 })
 
 const arrowFunction = () => {
-  console.log('hello')
+  console.log('hello');
 }
-arrowFunction()
+arrowFunction();
+
+const buttonElement = document.querySelector('.js-button');
+
+buttonElement.addEventListener('click', () => {
+  console.log('Ahem');
+  document.querySelector('body').innerHTML += '<div>Word </div>'
+});
