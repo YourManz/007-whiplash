@@ -17,7 +17,7 @@ function addItem2() {
 };
 
 function addSecondList() {
-  todoTwo.forEach(function(value, index) {
+  todoTwo.forEach((value, index) => {
       const date = document.querySelector('.js-date').value;
       document.querySelector('.js-todo-list-two').innerHTML += `<div class="basic-text">${todoTwo[index].todo}</div> <div class="basic-text">${todoTwo[index].date}</div> <button onclick="deleteSingleItem(${index})" class="red-button">Delete</button> <div></div>`;
     });

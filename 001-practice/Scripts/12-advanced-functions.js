@@ -14,3 +14,8 @@ const function1 = function() {
 ].forEach(function(value, index) {
   console.log(`${index + 1} ${value}`);
 })
+
+const arrowFunction = () => {
+  console.log('hello')
+}
+arrowFunction()

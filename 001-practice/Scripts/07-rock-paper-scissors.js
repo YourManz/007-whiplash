@@ -86,7 +86,7 @@ function playAuto() {
 
   if (autoPlayToggle === true) {
     document.querySelector('.js-auto-button').textContent = 'Stop Auto Play';
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const randomNumber = Math.random();
 
       if (randomNumber <= 1 / 3) {
