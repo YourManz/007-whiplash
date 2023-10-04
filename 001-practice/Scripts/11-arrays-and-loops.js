@@ -17,11 +17,11 @@ function addItem2() {
 };
 
 function addSecondList() {
-  for (index = 0; index <= todoTwo.length-1; index++) {
-    const date = document.querySelector('.js-date').value;
-    document.querySelector('.js-todo-list-two').innerHTML += `<div class="basic-text">${todoTwo[index].todo}</div> <div class="basic-text">${todoTwo[index].date}</div> <button onclick="deleteSingleItem(${index})" class="red-button">Delete</button> <div></div>`;
+  todoTwo.forEach(function(value, index) {
+      const date = document.querySelector('.js-date').value;
+      document.querySelector('.js-todo-list-two').innerHTML += `<div class="basic-text">${todoTwo[index].todo}</div> <div class="basic-text">${todoTwo[index].date}</div> <button onclick="deleteSingleItem(${index})" class="red-button">Delete</button> <div></div>`;
+    });
   };
-};
 
 function deleteSingleItem(i) {
   todoTwo.splice(i, 1);
