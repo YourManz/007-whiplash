@@ -16,7 +16,8 @@
     <p class="js-score"></p>
   <!--//===============================================================================-->
    <button class="reset-score" onclick="resetScore()">Reset Score  </button>
-   <button class="reset-score" onclick="playAuto()">Auto Play</button>
+   <button class="reset-score js-auto-button" onclick="playAuto()">Start Auto Play</button>
+   <input placeholder="Input Auto Speed Here" class="js-speed-input speed-input-box" onkeypress="event.code === 'Enter' && playAuto();">
   <!--//===============================================================================-->
     <script src="Scripts/07-rock-paper-scissors.js">
     </script>

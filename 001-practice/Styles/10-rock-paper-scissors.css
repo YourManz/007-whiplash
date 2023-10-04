@@ -38,3 +38,14 @@ body {
   background-color: rgb(102, 114, 165);
   cursor:pointer;
 }
+.speed-input-box {
+  padding:8px;
+  margin: 10px;
+  color:rgb(25, 25, 25);
+  font-weight:bold;
+  background-color: rgb(102, 114, 165);
+}
+.speed-input-box.placeholder-color::placeholder {
+  color: rgb(25, 25, 25);
+  font-weight: bold;
+}

@@ -79,11 +79,13 @@ function selectWinOrLose(a, b, c, d) {
 //===============================================================================
 let autoPlayToggle = false;
 let intervalId = null;
+document.querySelector('.js-speed-input').value = 3000;
 
 function playAuto() {
   autoPlayToggle = !autoPlayToggle;
 
   if (autoPlayToggle === true) {
+    document.querySelector('.js-auto-button').textContent = 'Stop Auto Play';
     intervalId = setInterval(function () {
       const randomNumber = Math.random();
 
@@ -94,8 +96,9 @@ function playAuto() {
       } else if (randomNumber > 2 / 3) {
         selectWinOrLose('scissors', 'rock', 'paper', 'scissors');
       }
-    }, 1000);
+    }, Number(document.querySelector('.js-speed-input').value));
   } else {
     clearInterval(intervalId); // Stop the interval when autoPlayToggle is false
+    document.querySelector('.js-auto-button').textContent = 'Start Auto Play';
   }
 }
