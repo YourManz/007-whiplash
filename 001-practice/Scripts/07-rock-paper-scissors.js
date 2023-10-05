@@ -2,6 +2,14 @@
 let score = JSON.parse(localStorage.getItem('score')) || {win:0,lose:0,tie:0};
 localStorage.setItem('score', JSON.stringify(score));
 
+const actionButtonRock = document.querySelector('.js-action-rock'); 
+const actionButtonPaper = document.querySelector('.js-action-paper');
+const actionButtonScissors = document.querySelector('.js-action-scissors');
+
+actionButtonRock.addEventListener('click', () => { selectWinOrLose('rock', 'paper', 'scissors', 'rock')});
+actionButtonPaper.addEventListener('click', () => { selectWinOrLose('paper', 'scissors', 'rock', 'paper')});
+actionButtonScissors.addEventListener('click', () => { selectWinOrLose('scissors', 'rock', 'paper', 'scissors')});
+
 //===============================================================================// Sets the score in the .score class
 
 document.querySelector('.js-score')
