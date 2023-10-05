@@ -6,6 +6,20 @@ const toggled = JSON.parse(localStorage.getItem('toggled')) || {
 const categories = ['gaming', 'music', 'tech'];
 loopThrough();
 
+const buttonGaming = document.querySelector('.js-gaming-button');
+const buttonMusic = document.querySelector('.js-music-button');
+const buttonTech = document.querySelector('.js-tech-button');
+
+buttonGaming.addEventListener('click', () => {
+  toggleButton('gaming')
+});
+buttonMusic.addEventListener('click', () => {
+  toggleButton('music')
+});
+buttonTech.addEventListener('click', () => {
+  toggleButton('tech')
+});
+
 function toggleButton(a) {
   const buttonClass = document.querySelector(`.js-${a}-button`);
   //document.querySelector('.category-button').classList.remove('toggled-button');
