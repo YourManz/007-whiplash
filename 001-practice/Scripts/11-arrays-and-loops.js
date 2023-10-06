@@ -1,6 +1,21 @@
 
 //==========================================================================
-const todoTwo= JSON.parse(localStorage.getItem('todoTwo')) || [];
+const todoTwo = JSON.parse(localStorage.getItem('todoTwo')) || [];
+const addButton = document.querySelector('.js-add-button');
+const clearButton = document.querySelector('.js-clear-button');
+const deleteButton = document.querySelector('');
+const inputKey  = document.querySelector('.js-input-2');
+
+addButton.addEventListener('click', () => {
+   addItem2()
+  });
+clearButton.addEventListener('click', () => {
+    clearListTwo()
+  });
+inputKey.addEventListener('keypress', (event) => {
+  event.code === 'Enter' && addItem2();
+});
+
 addSecondList();
 function addItem2() {
   const todoInput = document.querySelector('.js-input-2');
