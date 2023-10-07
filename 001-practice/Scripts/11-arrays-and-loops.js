@@ -1,10 +1,10 @@
 
-//==========================================================================
+//=========================================================================
 const todoTwo = JSON.parse(localStorage.getItem('todoTwo')) || [];
 const addButton = document.querySelector('.js-add-button');
 const clearButton = document.querySelector('.js-clear-button');
-const deleteButton = document.querySelector('');
 const inputKey  = document.querySelector('.js-input-2');
+const inputDate  = document.querySelector('.js-date');
 
 addButton.addEventListener('click', () => {
    addItem2()
@@ -13,6 +13,9 @@ clearButton.addEventListener('click', () => {
     clearListTwo()
   });
 inputKey.addEventListener('keypress', (event) => {
+  event.code === 'Enter' && addItem2();
+});
+inputDate.addEventListener('keypress', (event) => {
   event.code === 'Enter' && addItem2();
 });
 
