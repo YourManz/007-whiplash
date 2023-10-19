@@ -8,4 +8,4 @@ I roughly followed this series.
 
 https://www.youtube.com/watch?v=SBmSRK3feww&t=11745s
 
-I say roughly because most of the projects I attempted to and more or less completed with minimal assistance from the video. I however did teach me a lot.
+I say roughly because most of the projects I attempted to and more or less completed with minimal assistance from the video. I however did teach me a lot. This is a great reasource for 0 to something, however notable exemptions include test driven development and interaction with git.
